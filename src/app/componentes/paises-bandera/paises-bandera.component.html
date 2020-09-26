@@ -1,4 +1,4 @@
-<div class="col-md d-flex flex-wrap justify-content-center" *ngIf="listaPaises != undefined">
+<div class="col-md d-flex flex-wrap justify-content-center" *ngIf="listaPaises">
   <div class="card m-4 shadow-sm" *ngFor="let pais of listaPaises">
     <img src="{{pais.flag}}" alt="" class="card-img-top">
     <div class="card-body">
@@ -14,7 +14,7 @@
   </div>
 </div>
 
-<div class="col-md d-flex flex-wrap justify-content-center" *ngIf="listaPaises == undefined">
+<div class="col-md d-flex flex-wrap justify-content-center" *ngIf="!listaPaises">
   <div class="card m-4 shadow-sm" *ngFor="let pais of listaCompleta">
     <img src="{{pais.flag}}" alt="" class="card-img-top">
     <div class="card-body">
