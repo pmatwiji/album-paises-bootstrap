@@ -1,0 +1,50 @@
+<div class="col-md d-flex flex-wrap justify-content-center" *ngIf="listaPaises != undefined">
+  <div class="card m-4 shadow-sm" *ngFor="let pais of listaPaises">
+    <img src="{{pais.flag}}" alt="" class="card-img-top">
+    <div class="card-body">
+      <p class="card-text">{{pais.name}}</p>
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="btn-group">
+          <button type="button" class="btn btn-sm btn-outline-secondary">Guardar</button>
+          <button type="button" class="btn btn-sm btn-outline-secondary" (click)="open(content,pais)">Detalle</button>
+        </div>
+        <small class="text-muted">9 mins</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md d-flex flex-wrap justify-content-center" *ngIf="listaPaises == undefined">
+  <div class="card m-4 shadow-sm" *ngFor="let pais of listaCompleta">
+    <img src="{{pais.flag}}" alt="" class="card-img-top">
+    <div class="card-body">
+      <p class="card-text">{{pais.name}}</p>
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="btn-group">
+          <button type="button" class="btn btn-sm btn-outline-secondary">Guardar</button>
+          <button type="button" class="btn btn-sm btn-outline-secondary" (click)="open(content, pais)">Detalle</button>
+        </div>
+        <small class="text-muted">9 mins</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">{{paisSeleccionado.name}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Capital: {{paisSeleccionado.capital}}</p>
+    <p>Subregion: {{paisSeleccionado.subregion}}</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Guardar</button>
+  </div>
+</ng-template>

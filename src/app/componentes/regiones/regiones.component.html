@@ -1,0 +1,13 @@
+<section class="jumbotron text-center">
+  <div class="container">
+    <h1>Region : {{regionSeleccionada}}</h1>
+    <p class="lead text-muted">{{urlApi}}</p>
+    <p>
+      <a href="#" class="btn btn-primary my-2" (click)="seleccionarRegion('Europa',europa); emitirEvento('Europe')">Region: Europa</a>
+      <a href="#" class="btn btn-primary my-2" (click)="seleccionarRegion('Asia',asia); emitirEvento('Asia')">Region: Asia</a>
+      <a href="#" class="btn btn-primary my-2" (click)="seleccionarRegion('America',america); emitirEvento('Americas')">Region: America</a>
+      <a href="#" class="btn btn-primary my-2" (click)="seleccionarRegion('Africa',africa);emitirEvento('Africa')">Region: Africa</a>
+      <a href="#" class="btn btn-primary my-2" (click)="seleccionarRegion('Oceania',africa);emitirEvento('Oceania')">Region: Oceania</a>
+    </p>
+  </div>
+</section>

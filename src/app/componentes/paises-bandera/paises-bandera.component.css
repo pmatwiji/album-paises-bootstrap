@@ -1,0 +1,8 @@
+@import '../principal/principal.component.css';
+
+.card-img-top{
+    width: 420px;
+    height: 225px;
+    object-fit: cover;
+
+}
